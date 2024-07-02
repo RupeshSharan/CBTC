@@ -1,3 +1,6 @@
 import random
 import tkinter as tk
+def play_game:
+  computer_choice=random.randint(0,2)
+  
 
