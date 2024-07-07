@@ -29,11 +29,12 @@ def hints(P1, P2, P_guess_count):
             if P1_list==P2_list:
                 break
             found=False
-            for i in range(len(P1)):
-                if P2_list[i]==P1_list[i]:
-                    
-                    print(P2_list[i])
-                    found=True
+            common_elements = [x for x in P1_list if x in P2_list]
+            if len(common_elements)!=0:
+                found=True
+            for i in common_elements:
+                print(i)
+            
             if found:
                 print("The above digits entered are present in the number")
             else:
