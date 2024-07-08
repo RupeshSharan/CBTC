@@ -1,5 +1,6 @@
 import getpass
 import sys
+import random
 def is_prime(_Player_1):
   i=1
   flag=0
