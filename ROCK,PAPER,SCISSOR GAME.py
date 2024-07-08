@@ -2,6 +2,8 @@ import random
 import tkinter as tk
 
 def play_game(user_choice):
+    
+    
     rock = '''
         _______
     ---'   ____)
@@ -10,6 +12,7 @@ def play_game(user_choice):
           (____)
     ---.__(___)
     '''
+    
 
     paper = '''
         _______
@@ -19,6 +22,8 @@ def play_game(user_choice):
              _________)
     ---.____________)
     '''
+    
+    
 
     scissors = '''
         ______
@@ -28,6 +33,7 @@ def play_game(user_choice):
           (____)
     ---.__(___)
     '''
+    
 
     tools = [rock, paper, scissors]
     global player_score
@@ -43,11 +49,13 @@ def play_game(user_choice):
     else:
         computer_score += 1
         result = f"You chose {tools[user_choice]} \nThe computer chose {tools[computer_choice]}\n You lose! computer score {computer_score}"
+        
+        
     if (player_score >= 10) or (computer_score >= 10):
        if player_score > computer_score:
-            Result = f"Player won the game with {player_score}\n Thank for playing the game"
+            Result = f"Player won the game with {player_score} points\n Thank you for playing the game"
        else:
-           Result = f"Computer won the game with {computer_score}\n Thank for playing the game"
+           Result = f"Computer won the game with {computer_score} points\n Thank you for playing the game"
        result_text.set(result)
        Result_text.set(Result)
        for widget in main_window.winfo_children():
@@ -61,11 +69,13 @@ main_window.title("Rock, Paper, Scissors")
 main_window.geometry("500x500")
 main_window.configure(bg="lightpink")
 
+
 tk.Label(main_window, text="Welcome to rock paper scissor game",bg="aqua",highlightthickness=5,font="Lucida").pack(pady=10)
 tk.Label(main_window, text="Select a button below to play the game",bg="yellow",highlightthickness=5,font="Lucida").pack(pady=10)
 tk.Button(main_window,text="Rock",bg="lightgreen",command=lambda:play_game(0),font="Lucida").pack(pady=5)
 tk.Button(main_window,text="Paper",bg="skyblue",command=lambda:play_game(1),font="Lucida").pack(pady=5)
 tk.Button(main_window,text="Scissors",bg="red",command=lambda:play_game(2),font="Lucida").pack(pady=5)
+
 
 result_text = tk.StringVar()
 result_label = tk.Label(main_window, textvariable=result_text, font=('Arial', 12),bg="aqua", wraplength=300)
